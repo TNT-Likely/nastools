@@ -1,4 +1,4 @@
-FROM alpine
+FROM alpine:3.18.6
 
 # apk 国内镜像
 RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories \ 
@@ -11,8 +11,6 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && if [ "$(uname -m)" = "x86_64" ]; then ARCH=amd64; elif [ "$(uname -m)" = "aarch64" ]; then ARCH=arm64; fi \
     && curl https://dl.min.io/client/mc/release/linux-${ARCH}/mc --create-dirs -o /usr/bin/mc \
     && chmod +x /usr/bin/mc \
-    && python3 -m venv /path/to/venv \
-    && . /path/to/venv/bin/activate \
     # pip国内镜像
     && pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ \
     && pip install --upgrade pip setuptools wheel \
