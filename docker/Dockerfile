@@ -15,7 +15,7 @@ RUN sed -i 's/dl-cdn.alpinelinux.org/mirrors.aliyun.com/g' /etc/apk/repositories
     && pip config set global.index-url https://mirrors.aliyun.com/pypi/simple/ \
     && pip install --upgrade pip setuptools wheel \
     && pip install cython  \
-    && pip install -r https://raw.githubusercontent.com/TNT-Likely/nastools/master/requirements.txt \
+    && pip install -r https://raw.githubusercontent.com/TNT-Likely/nastools/dev/requirements.txt \
     && apk del libffi-dev \
     && npm install pm2 -g \
     && rm -rf /tmp/* /root/.cache /var/cache/apk/*
