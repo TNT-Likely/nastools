@@ -12,3 +12,4 @@ test.py
 *.ipr
 out/
 gen/
+temp/

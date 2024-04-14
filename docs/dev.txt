@@ -1,0 +1,1 @@
+export NASTOOL_CONFIG="./temp/config.yaml" && python3 run.py
